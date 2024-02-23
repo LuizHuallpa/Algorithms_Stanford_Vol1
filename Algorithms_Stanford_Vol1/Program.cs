@@ -1,5 +1,7 @@
 ﻿using Algorithms_Stanford_Vol1;
 
+//Quick Find and Quick Union
+
 int N = int.Parse(Console.ReadLine());
 
 // Create a QuickUnionUF instance
@@ -23,3 +25,5 @@ while (true)
         Console.WriteLine(p + " " + q);
     }
 }
+
+
