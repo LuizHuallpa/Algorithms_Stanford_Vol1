@@ -19,6 +19,8 @@ namespace Algorithms_Stanford_Vol1
         public QuickUnionUF(int N)
         {
             id = new int[N];
+            sz = new int[N];
+
             for (int i = 0; i < N; i++)
             {
                 id[i] = i;
@@ -57,6 +59,20 @@ namespace Algorithms_Stanford_Vol1
             if (i == j) return;
             if (sz[i] < sz[j]) { id[i] = j; sz[j] += sz[i]; }
             else { id[j] = i; sz[i] += sz[j]; }
+        }
+
+        public int Max(int i)
+        {
+            int root = Root(i);
+            int max = i;
+            for (int j = 0; j < id.Length; j++)
+            {
+                if (Root(j) == root && j > max)
+                {
+                    max = j;
+                }
+            }
+            return max;
         }
     }
 }
